@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-science-gothic);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #e6e6e6;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-science-gothic), Arial, Helvetica, sans-serif;
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100vw);
+    opacity: 0;
+    text-shadow: -50px -50px 60px rgba(0, 0, 0, 0);
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+    text-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3);
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  @keyframes slideInFromRight {
+    0% {
+      transform: translateX(100vw);
+      opacity: 0;
+      text-shadow: -50px -50px 60px rgba(0, 0, 0, 0);
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+      text-shadow: 10px 10px 30px rgba(0, 0, 0, 0.8);
+    }
+  }
+}
+
+.animate-slide-in-text {
+  animation: slideInFromRight 1.2s ease-out forwards;
+}
+
+@media (prefers-color-scheme: dark) {
+  .animate-slide-in-text {
+    --animated-shadow: 10px 10px 30px rgba(0, 0, 0, 0.8);
+  }
+}
