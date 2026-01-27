@@ -1,9 +1,6 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@variant dark (&:where(.dark, .dark *));
 
 @theme inline {
   --color-background: var(--background);
@@ -11,10 +8,23 @@
   --font-sans: var(--font-science-gothic);
 }
 
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --bg-image: url(/snowy.png);
+}
+
+:root.dark {
+  --background: #0a0a0a;
+  --foreground: #e6e6e6;
+  --bg-image: url(/snowynight.png);
+}
+
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not(.light) {
     --background: #0a0a0a;
     --foreground: #e6e6e6;
+    --bg-image: url(/snowynight.png);
   }
 }
 
