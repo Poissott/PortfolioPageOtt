@@ -71,3 +71,26 @@ body {
     --animated-shadow: 10px 10px 30px rgba(0, 0, 0, 0.8);
   }
 }
+
+/* Project Card Image Carousel Animations */
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
