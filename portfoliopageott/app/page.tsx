@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import IntroAnimation from "./components/IntroAnimation";
 import ThemeToggle from "./components/ThemeToggle";
 import ProjectCard from "./components/ProjectCard";
+import Footer from "./components/Footer";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -188,7 +189,7 @@ export default function Home() {
         />
       )}
       
-      <div className="min-h-[400vh] bg-zinc-50 dark:bg-black relative">
+      <div className="min-h-[200vh] bg-zinc-50 dark:bg-black relative">
       {/* 12 Column Grid Container - First Section with Background */}
       <div 
         ref={(el) => {
@@ -275,68 +276,22 @@ export default function Home() {
           <ProjectCard
             images={["/storytelling.png", "/storytelling2.png", "/storytelling3.png"]}
             title="Storytelling Project"
-            description="An interactive storytelling experience with multiple visual elements and narrative flow."
-            githubUrl="https://github.com/yourusername/storytelling"
+            description="A multiplayer storytelling game built with React and Node.js. Players create stories together section by section."
+            githubUrl="https://github.com/Poissott/Storywriting-help"
             deployedUrl="https://storytelling.example.com"
           />
         </div>
         <div className="col-span-6 flex items-start justify-center right-content p-16">
           <ProjectCard
-            images={[]}
-            title="Project Title 2"
-            description="Description for the second project. Add your project details here."
-            githubUrl="https://github.com/yourusername/project2"
-          />
-        </div>
-      </div>
-
-      {/* Section 3 - Projects */}
-      <div 
-        ref={(el) => addToRefs(el, 2)}
-        className="grid grid-cols-12 gap-0 min-h-screen relative z-20 bg-zinc-50 dark:bg-black"
-      >
-        <div className="col-span-6 flex items-start justify-center left-content p-16">
-          <ProjectCard
-            images={["/project3.png"]}
-            title="Project Title 3"
-            description="Description for the third project. Add your project details here."
-            githubUrl="https://github.com/yourusername/project3"
-            deployedUrl="https://project3.example.com"
-          />
-        </div>
-        <div className="col-span-6 flex items-start justify-center right-content p-16">
-          <ProjectCard
-            images={["/project4.png"]}
-            title="Project Title 4"
-            description="Description for the fourth project. Add your project details here."
-            githubUrl="https://github.com/yourusername/project4"
-          />
-        </div>
-      </div>
-
-      {/* Section 4 - Projects */}
-      <div 
-        ref={(el) => addToRefs(el, 3)}
-        className="grid grid-cols-12 gap-0 min-h-screen relative z-20 bg-zinc-50 dark:bg-black"
-      >
-        <div className="col-span-6 flex items-start justify-center left-content p-16">
-          <ProjectCard
-            images={["/project5.png"]}
-            title="Project Title 5"
-            description="Description for the fifth project. Add your project details here."
-            githubUrl="https://github.com/yourusername/project5"
-            deployedUrl="https://project5.example.com"
-          />
-        </div>
-        <div className="col-span-6 flex items-start justify-center right-content p-16">
-          <ProjectCard
-            images={["/project6.png"]}
-            title="Project Title 6"
-            description="Description for the sixth project. Add your project details here."
+            images={["/kunst1.png", "/kunst2.png", "/kunst3.png"]}
+            title="Art Museum QR-reader"
+            description="An app that allows visitors to scan QR codes in an art museum to solve quizzes and play minigames."
+            githubUrl="https://github.com/Poissott/kunstimuuseumQ"
           />
         </div>
       </div>
     </div>
+    <Footer />
     </>
   );
 }

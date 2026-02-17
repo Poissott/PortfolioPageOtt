@@ -19,12 +19,8 @@ export default function IntroAnimation({
   useEffect(() => {
     const tl = gsap.timeline();
 
-    // Call onComplete when container starts fading (not at the end)
     const callOnComplete = () => onComplete();
 
-    // 1. Start with blank screen (already visible)
-    
-    // 2. Spotlight effect fades in (0.5s delay, then 1s fade)
     tl.to(spotlightRef.current, {
       opacity: 1,
       duration: 1,
@@ -32,11 +28,10 @@ export default function IntroAnimation({
       delay: 0.5
     });
 
-    // 3. Keywords slide through the spotlight
     keywordsRef.current.forEach((keyword, index) => {
       if (!keyword) return;
       
-      const direction = index % 2 === 0 ? 1 : -1; // Alternate left-right
+      const direction = index % 2 === 0 ? 1 : -1;
       const startX = direction === 1 ? "-100%" : "100%";
       const endX = direction === 1 ? "100%" : "-100%";
 
@@ -66,7 +61,6 @@ export default function IntroAnimation({
       );
     });
 
-    // 4. Spotlight fades out and intro screen transitions away
     tl.to(spotlightRef.current, {
       opacity: 0,
       duration: 0.8,

@@ -28,13 +28,13 @@ export default function ProjectCard({
 
     const interval = setInterval(() => {
       setIsTransitioning(true);
-      setSlideDirection('right'); // Always slide to the right for auto-advance
+      setSlideDirection('right');
       
       setTimeout(() => {
         setCurrentImageIndex((prev) => (prev + 1) % images.length);
         setIsTransitioning(false);
       }, 50); // Brief delay for animation trigger
-    }, 4000); // Change image every 3 seconds
+    }, 4000); // Changing image every 3 seconds
 
     return () => clearInterval(interval);
   }, [images.length]);
@@ -46,7 +46,7 @@ export default function ProjectCard({
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* Image Container */}
-      <div className="relative w-full aspect-video bg-black dark:bg-black overflow-hidden rounded-lg">
+      <div className="relative w-full h-96 bg-black dark:bg-black overflow-hidden rounded-lg flex items-center justify-center">
         {images.length > 0 ? (
           <>
             <div className="relative w-full h-full">
@@ -54,7 +54,7 @@ export default function ProjectCard({
                 key={currentImageIndex}
                 src={images[currentImageIndex]}
                 alt={`${title} - Image ${currentImageIndex + 1}`}
-                className={`absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out ${
+                className={`absolute inset-0 w-full h-full object-contain transition-transform duration-700 ease-in-out ${
                   isTransitioning
                     ? slideDirection === 'right'
                       ? 'translate-x-full'
