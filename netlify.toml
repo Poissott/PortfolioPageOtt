@@ -1,7 +1,7 @@
 [build]
   base = "portfoliopageott"
   command = "npm run build"
-  publish = "portfoliopageott/.next"
+  publish = ".next"
 
 [functions]
-  directory = "portfoliopageott/functions"
+  directory = "functions"
