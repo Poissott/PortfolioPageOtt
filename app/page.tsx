@@ -278,7 +278,6 @@ export default function Home() {
             title="Storytelling Project"
             description="A multiplayer storytelling game built with React and Node.js. Players create stories together section by section."
             githubUrl="https://github.com/Poissott/Storywriting-help"
-            deployedUrl="https://storytelling.example.com"
           />
         </div>
         <div className="col-span-6 flex items-start justify-center right-content p-16">
